@@ -119,6 +119,8 @@
                 <module>webcomponents</module>
                 <module>webjars</module>
                 <module>webservices</module>
+                <module>attendance-master</module>
+                <module>certification</module>
             </modules>
         </profile>
         <profile>
@@ -204,6 +206,8 @@
                 <module>webjars</module>
                 <module>webservices</module>
                 <module>yaft</module>
+                <module>attendance-master</module>
+                <module>certification</module>
             </modules>
         </profile>
 

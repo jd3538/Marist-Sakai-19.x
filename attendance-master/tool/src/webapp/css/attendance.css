@@ -14,6 +14,10 @@
  *  limitations under the License.
  */
 
+/* Marist Changes:
+(01) - 20180322 - JD Change to Marist Colors
+ */
+
 body {
     color: #111;
 }
@@ -776,11 +780,17 @@ div.wicket-modal div.w_content_3 div.messageSuccess, div.wicket-modal div.w_cont
 }
 
 form.takeAttendanceNowForm input {
-    background-color: green;
+/* Change (01) - Begins - JD - 20180322
+    background-color: green; */
+    background-color: #FFFFFF;
+/* Change (01) - Ends - JD - 20180322 */     
 }
 
 form.takeAttendanceNowForm input:hover {
-    background: linear-gradient(green, darkgreen);
+/* Change (01) - Begins - JD - 20180322
+    background: linear-gradient(green, darkgreen); */
+    background: #008999;
+/* change (01) - Ends - JD - 20180322 */    
 }
 
 span.yui-skin-sam img {

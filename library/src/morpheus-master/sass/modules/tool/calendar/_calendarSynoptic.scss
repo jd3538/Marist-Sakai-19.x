@@ -1,3 +1,5 @@
+// Changes
+// 01 - JD - 20180322 - Apply Marist Colors 
 @import "_calendar_variables";
 
 .#{$namespace}calendarSynoptic
@@ -109,17 +111,27 @@
 		.calToday 			// today without events
 		{
 			border-color: $calendar-day-today-border-color;
-			background-color: $calendar-day-today-background-color;
-			color: $calendar-day-today-text-color;
+//                      Change (01) Begins - JD - 20180322 
+//  			background-color: $calendar-day-today-background-color;
+			background-color: $marist-grey !important;
+//			color: $calendar-day-today-text-color;
+			color: $marist-black !important;
+//      		Change (01) Ends - JD - 20180322
 
 			a
 			{
+//                      Change (01) Begins - JD - 20180322 
 				color: $calendar-day-today-text-color;
+				color: $marist-black !important;
+//			Change (01) Ends - JD - 20180322
 			}
 
 			&.calSelectedDay		//today selected without activity
 			{
-				border: 1px dashed $calendar-day-today-text-color;
+//			Change (01) Begins - JD - 20180322
+//				border: 1px dashed $calendar-day-today-text-color;
+				border: 1px dashed $marist-black !important;
+//			Change (01) Ends - JD - 20180322
 			}
 		}
 
@@ -129,7 +141,10 @@
 			// 1. colors specified for high/medium/low priority events in Options (user preferences)
 			// 2. default colors specified in sakai.properties
 			border-color: $calendar-event-border-color;
-			background-color: #f9f9f9;
+// 			Change (01) Begins - JD - 20180322
+//			background-color: #f9f9f9;
+			background-color: $marist-yellow !important;
+//			Change (01) Ends - JD - 20180322
 			font-weight: normal;
 			text-align: center;
 
@@ -137,7 +152,10 @@
 			{
 				width: 100%;		// to maximize click area
 				height: 100%;
-				color: $text-color;
+//				Change (01) Begins - JD - 20180322
+//				color: $text-color;
+				color: $marist-black !important;
+//				Change (01) Ends - JD - 20180322
 				text-shadow: 0 0 2px rgba(255, 255, 255, 1);			// to be able to see text on dark user-picked background colours
 				text-decoration: none;
 

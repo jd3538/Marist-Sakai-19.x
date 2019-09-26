@@ -12779,8 +12779,9 @@ private Map<String,List> getTools(SessionState state, String type, Site site) {
 								// save the attribute input if valid, otherwise generate alert
 								if ( FormattedText.validateURL(attributeInput) )
 									attributes.put(attribute, attributeInput);
-								else
+								else {
 									addAlert(state, rb.getString("java.invurl"));
+								}
 							}
 						}
 						multipleToolConfiguration.put(id, attributes);

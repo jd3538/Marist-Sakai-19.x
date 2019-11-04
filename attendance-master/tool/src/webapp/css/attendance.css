@@ -16,7 +16,6 @@
 
 /* Marist Changes:
 (01) - 20180322 - JD Change to Marist Colors
-(02) - 20180322 - JD Adjust column width for official photos
  */
 
 body {
@@ -174,9 +173,9 @@ table.itemListTable, table.eventViewTable, table.takeAttendanceTable, div.eventF
 
 .studentPhotoCol {
     text-align: center !important;
-/* Change (02) - Begins - JD - 20180322 */
-    max-width: 150px !important;
-/* Change (02) - Ends - JD - 20180322 */
+    width: 80px;
+    min-height: 60px;
+    max-height: 140px;
 }
 
 .overviewTable th, .itemListTable th, .eventViewTable th, .takeAttendanceTable th {

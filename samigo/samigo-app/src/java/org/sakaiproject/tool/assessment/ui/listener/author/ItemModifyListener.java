@@ -202,19 +202,21 @@ public class ItemModifyListener implements ActionListener
 
         bean.setItemId(itemfacade.getItemId().toString());
 
-        AssessmentIfc assessment = (AssessmentIfc) itemfacade.getSection().getAssessment();
+        if ("assessment".equals(itemauthorbean.getTarget())) {
+            AssessmentIfc assessment = (AssessmentIfc) itemfacade.getSection().getAssessment();
 
-        Long assessmentId = (assessment instanceof PublishedAssessmentIfc)
-            ? ((PublishedAssessmentIfc) assessment).getPublishedAssessmentId() : assessment.getAssessmentId();
-        List<AssessmentGradingData> assessmentGradingData = gradingService.getAllSubmissions(assessmentId.toString());
-        if (assessmentGradingData != null && assessmentGradingData.size() > 0) {
-            assessmentGradingData.forEach(agd -> {
-                agd.getItemGradingSet().forEach(igd -> {
-                    if (igd.getSubmittedDate() != null && igd.getPublishedItemId().toString().equals(bean.getItemId())) {
-                        bean.setHasSubmissions(true);
-                    }
+            Long assessmentId = (assessment instanceof PublishedAssessmentIfc)
+                ? ((PublishedAssessmentIfc) assessment).getPublishedAssessmentId() : assessment.getAssessmentId();
+            List<AssessmentGradingData> assessmentGradingData = gradingService.getAllSubmissions(assessmentId.toString());
+            if (assessmentGradingData != null && assessmentGradingData.size() > 0) {
+                assessmentGradingData.forEach(agd -> {
+                    agd.getItemGradingSet().forEach(igd -> {
+                        if (igd.getSubmittedDate() != null && igd.getPublishedItemId().toString().equals(bean.getItemId())) {
+                            bean.setHasSubmissions(true);
+                        }
+                    });
                 });
-            });
+            }
         }
 
       bean.setItemType(itemfacade.getTypeId().toString());
@@ -548,7 +550,9 @@ public class ItemModifyListener implements ActionListener
            }
 	   AnswerBean answerbean = new AnswerBean();
 	            answerbean.setId(answerArray[i].getId());
-	            answerbean.setAnswerFeedbackId(feedbackSet.iterator().next().getId());
+                if (feedbackSet.size() > 0) {
+                    answerbean.setAnswerFeedbackId(feedbackSet.iterator().next().getId());
+                }
                 answerbean.setText(answerArray[i].getText());
                 answerbean.setSequence(answerArray[i].getSequence());
                 answerbean.setLabel(answerArray[i].getLabel());
